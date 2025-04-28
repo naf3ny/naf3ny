@@ -26,22 +26,22 @@ const App = () => {
   const router = createBrowserRouter(
     createRoutesFromElements(
       <>
-       <Route path="/nafany/check_sign" element={<CheckSignInOrSignUp/>} />
-        <Route path="/nafany/check_user" element={<CheckUserOrServicer />} />
-        <Route path="/nafany/login" element={<Login />} />
-        <Route path="/nafany/register" element={<Register />} />
-        <Route path="/nafany/register_user" element={<RegisterUser />} />
-        <Route path="/nafany/services_jobs/:serviceType/:professionType" element={<ServicesJobs />} />
-        <Route path="/nafany/servicer_page" element={<ServicerPage />} />
-        <Route path="/nafany/book_page/:providerId" element={<BookPage />} />
-        <Route path="/nafany/" element={<Home />} />
-        <Route path="/nafany/chat/:providerId" element={<ChatPage />} />
-        <Route path="/nafany/chats" element={<ChatsListPage />} />
-        <Route path="/nafany/settings" element={<SettingsPage />} />
-        <Route path="/nafany/contact" element={<Contact />} />
-        <Route path="/nafany/complaints" element={<ComplaintsPage />} />
-        <Route path="/nafany/admin" element={<Admin />} />
-        <Route path="/nafany/service_categories/:serviceType" element={<ServiceCategoriesPage />} />
+       <Route path="/naf3ny/check_sign" element={<CheckSignInOrSignUp/>} />
+        <Route path="/naf3ny/check_user" element={<CheckUserOrServicer />} />
+        <Route path="/naf3ny/login" element={<Login />} />
+        <Route path="/naf3ny/register" element={<Register />} />
+        <Route path="/naf3ny/register_user" element={<RegisterUser />} />
+        <Route path="/naf3ny/services_jobs/:serviceType/:professionType" element={<ServicesJobs />} />
+        <Route path="/naf3ny/servicer_page" element={<ServicerPage />} />
+        <Route path="/naf3ny/book_page/:providerId" element={<BookPage />} />
+        <Route path="/naf3ny/" element={<Home />} />
+        <Route path="/naf3ny/chat/:providerId" element={<ChatPage />} />
+        <Route path="/naf3ny/chats" element={<ChatsListPage />} />
+        <Route path="/naf3ny/settings" element={<SettingsPage />} />
+        <Route path="/naf3ny/contact" element={<Contact />} />
+        <Route path="/naf3ny/complaints" element={<ComplaintsPage />} />
+        <Route path="/naf3ny/admin" element={<Admin />} />
+        <Route path="/naf3ny/service_categories/:serviceType" element={<ServiceCategoriesPage />} />
       </>
     )
   );

@@ -27,7 +27,7 @@ const ChatsListPage = () => {
         // تحقق من بيانات المستخدم المخزنة
         const storedUser = localStorage.getItem('currentUser');
         if (!storedUser || storedUser === '""') {
-          navigate('/nafany/login');
+          navigate('/naf3ny/login');
           return;
         }
         
@@ -109,7 +109,7 @@ const ChatsListPage = () => {
     const otherParticipantId = chat.otherParticipantId;
     
     if (isProvider) {
-      navigate(`/nafany/chat/${otherParticipantId}`, {
+      navigate(`/naf3ny/chat/${otherParticipantId}`, {
         state: {
           user: {
             uid: otherParticipantId,
@@ -119,7 +119,7 @@ const ChatsListPage = () => {
         }
       });
     } else {
-      navigate(`/nafany/chat/${otherParticipantId}`, {
+      navigate(`/naf3ny/chat/${otherParticipantId}`, {
         state: {
           provider: {
             id: otherParticipantId,
@@ -178,7 +178,7 @@ const ChatsListPage = () => {
               <p className="text-gray-500">سيظهر عملاؤك هنا عندما يبدأون محادثة معك</p>
             ) : (
               <button
-                onClick={() => navigate('/nafany/providers')}
+                onClick={() => navigate('/naf3ny/providers')}
                 className="bg-cyan-600 text-white px-4 py-2 rounded-lg hover:bg-cyan-700"
               >
                 ابحث عن مقدمي الخدمة

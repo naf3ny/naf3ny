@@ -56,7 +56,7 @@ const ServiceCategoriesPage = () => {
 
   const handleCategoryClick = (category) => {
     // الانتقال إلى صفحة مقدمي الخدمة
-    navigate(`/nafany/services_jobs/${serviceType}/${category.name}`);
+    navigate(`/naf3ny/services_jobs/${serviceType}/${category.name}`);
   };
 
   return (

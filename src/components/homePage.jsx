@@ -23,7 +23,7 @@ const ServiceCard = ({ title, description, image, bgColor }) => {
         scale: 1.05, 
         transition: { duration: 0.3 } 
       }}
-      onClick={() => navigate(`/nafany/service_categories/${title}`)}
+      onClick={() => navigate(`/naf3ny/service_categories/${title}`)}
     >
       <div className="flex flex-col items-center">
         <img 
@@ -45,10 +45,10 @@ const OfferCard = ({ title, description, discount, isLoggedIn }) => {
   const handleOfferClick = () => {
     if (!isLoggedIn) {
       alert('يجب تسجيل الدخول أولاً للاستفادة من العروض');
-      navigate('/nafany/login');
+      navigate('/naf3ny/login');
     } else {
       // تنفيذ إجراء العرض للمستخدم المسجل
-      navigate('/nafany');
+      navigate('/naf3ny');
     }
   };
 
@@ -101,7 +101,7 @@ const HomePage = () => {
             
             // تحقق من الدور بعد تعيين بيانات المستخدم
             if (parsedUser.role === 'provider') {
-              navigate('/nafany/servicer_page');
+              navigate('/naf3ny/servicer_page');
             } else {
               // Fetch chats for regular users
               const userChats = await fetchUserChats(parsedUser.id || parsedUser.uid);
@@ -155,7 +155,7 @@ const HomePage = () => {
     // Get user ID safely
     const userId = userData.id || userData.uid;
     
-    navigate(`/nafany/chat/${providerId}`, {
+    navigate(`/naf3ny/chat/${providerId}`, {
       state: {
         provider: {
           id: providerId,
@@ -176,32 +176,32 @@ const HomePage = () => {
     localStorage.removeItem('currentUser');
     setIsLoggedIn(false);
     setUserData(null);
-    navigate('/nafany');
+    navigate('/naf3ny');
   };
 
   const serviceCards = [
     {
       title: "خدمات فنية",
       description: "سباك، نجار، كهربائي، ميكانيكي، حداد، فني تكييفات، نقاش، ترزي",
-      image: "/nafany/electric.jpg",
+      image: "/naf3ny/electric.jpg",
       bgColor: "bg-[#2f4156]"
     },
     {
       title: "خدمات صحية",
       description: "مستشفيات، عيادات، صيدليات، مراكز طبية",
-      image: "/nafany/medicin.jpg",
+      image: "/naf3ny/medicin.jpg",
       bgColor: "bg-[#567c8d]"
     },
     {
       title: "خدمات عامة",
       description: "سوبر ماركت، مطاعم، كافيهات، مولات، خدمات تجارية",
-      image: "/nafany/download.png",
+      image: "/naf3ny/download.png",
       bgColor: "bg-[#808080]"
     },
     {
       title: "خدمات أخرى",
       description: "عطار، جزار، فكهاني، خضري، محل ألبان، خدمات متفرقة",
-      image: "/nafany/download (1).png",
+      image: "/naf3ny/download (1).png",
       bgColor: "bg-[#62a2d3]"
     }
   ];

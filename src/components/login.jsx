@@ -19,7 +19,7 @@ const Login = () => {
 
     try {
       if(emailOrPhone === "admin" && password === "admin1") {
-        navigate("/nafany/admin");
+        navigate("/naf3ny/admin");
       }
       // تحديد المجموعة بناءً على الدور
       const collectionName = role === "user" ? "users" : "serviceProviders";
@@ -68,9 +68,9 @@ const Login = () => {
       
       
        if (role === "user") {
-        navigate("/nafany");
+        navigate("/naf3ny");
       } else if (role === "provider") {
-        navigate("/nafany/servicer_page");
+        navigate("/naf3ny/servicer_page");
       }
     
     } catch (error) {
@@ -182,14 +182,14 @@ const Login = () => {
           
           <div className="flex flex-col gap-2">
             <Link 
-              to="/nafany/register_user" 
+              to="/naf3ny/register_user" 
               className="text-cyan-600 hover:text-cyan-800 font-medium text-sm"
             >
               إنشاء حساب مستخدم جديد
             </Link>
             
             <Link 
-              to="/nafany/register" 
+              to="/naf3ny/register" 
               className="text-cyan-600 hover:text-cyan-800 font-medium text-sm"
             >
               التسجيل كمقدم خدمة

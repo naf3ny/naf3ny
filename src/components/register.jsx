@@ -201,7 +201,7 @@ const RegisterProvider = () => {
       await setDoc(doc(db, "serviceProviders", formData.email), providerData);
   
       alert("تم التسجيل بنجاح");
-      navigate("/nafany/login");
+      navigate("/naf3ny/login");
     } catch (e) {
       console.error("حدث خطأ أثناء التسجيل: ", e);
       alert("حدث خطأ أثناء التسجيل، يرجى المحاولة مرة أخرى");

@@ -311,7 +311,7 @@ const handleStartChat = () => {
   const userId = userData.uid || userData.id;
   const providerId = providerData.id || providerData.uid;
 
-  navigate(`/nafany/chat/${providerId}`, {
+  navigate(`/naf3ny/chat/${providerId}`, {
     state: {
       provider: {
         id: providerId,

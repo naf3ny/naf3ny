@@ -17,8 +17,8 @@ const CheckUserOrServicer = () => {
   const navigate = useNavigate();
 
   const handleContinue = () => {
-    if (accountType === "user") navigate("/nafany/register_user");
-    else if (accountType === "provider") navigate("/nafany/register");
+    if (accountType === "user") navigate("/naf3ny/register_user");
+    else if (accountType === "provider") navigate("/naf3ny/register");
     else alert("الرجاء اختيار نوع الحساب");
   };
 
