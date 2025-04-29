@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { useParams, useNavigate } from 'react-router-dom';
 import { db } from '../firebase';
 import { collection, query, where, getDocs } from 'firebase/firestore';
-import { tr } from 'framer-motion/client';
+
 
 const JobsPage = () => {
   const { serviceType, professionType } = useParams(); // استخراج نوع المهنة المحددة
@@ -18,12 +18,9 @@ const JobsPage = () => {
 
   // قائمة المحافظات المصرية
   const allGovernorates = [
-    "وسط البلد", "الزمالك", "المعادي", "مدينة نصر", "مصر الجديدة",
-    "التجمع الخامس", "الرحاب", "مدينتي", "الشروق", "العبور",
-    "6 أكتوبر", "الشيخ زايد", "حدائق الأهرام", "المقطم", "عين شمس",
-    "المرج", "حلوان", "دار السلام", "السيدة زينب", "باب الشعرية",
-    "شبرا", "الزاوية الحمراء", "حدائق القبة", "المطرية", "مدينة بدر",
-    "البساتين", "التبين", "الواحة", "النزهة", "الهرم"
+    "وسط البلد", "الزمالك", "المعادي", "مدينة نصر",
+    "المرج", "حلوان", "السيدة زينب",
+    "شبرا", "المطرية"
 ];
 
   useEffect(() => {
