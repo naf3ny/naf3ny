@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { useParams, useNavigate } from 'react-router-dom';
 import { db } from '../firebase';
 import { collection, query, where, getDocs } from 'firebase/firestore';
+import { tr } from 'framer-motion/client';
 
 const JobsPage = () => {
   const { serviceType, professionType } = useParams(); // استخراج نوع المهنة المحددة
@@ -62,6 +63,7 @@ const JobsPage = () => {
 
         setAllJobs(jobsData);
         setFilteredJobs(jobsData);
+        console.log('Jobs data:', jobsData);
         setProfessionsList(Array.from(professions));
         setGovernoratesList(['الكل', ...allGovernorates]);
         setLoading(false);
@@ -89,8 +91,8 @@ const JobsPage = () => {
     setFilteredJobs(filtered);
   }, [selectedProfession, selectedGovernorate, allJobs]);
 
-  const handleDetailsClick = (provider) => {
-    navigate(`/naf3ny/book_page/${provider.id}`, { state: { provider } });
+  const handleDetailsClick = (provider , bool) => {
+    navigate(`/naf3ny/book_page/${provider.id}`, { state: { provider , bool } });
   };
 
   // دالة لإنشاء عنوان الصفحة بناءً على حالة الفلتر
@@ -222,7 +224,7 @@ const JobsPage = () => {
                     {job.governorate}
                   </span>
                   <button 
-                    onClick={() => handleDetailsClick(job.providerData)}
+                    onClick={() => handleDetailsClick(job.providerData , job.providerData.category =="خدمات صحية" || job.providerData.category =="خدمات فنية" ? true : false)}
                     className="bg-cyan-600 hover:bg-cyan-700 text-white px-4 py-2 rounded-lg text-sm transition-colors"
                   >
                     عرض الملف الشخصي

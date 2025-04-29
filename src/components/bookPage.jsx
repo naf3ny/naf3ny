@@ -44,6 +44,7 @@ const ProviderDetailsPage = () => {
   const [bookingResult, setBookingResult] = useState(null); 
   const [showResultModal, setShowResultModal] = useState(false);
   const [isSubmittingReview, setIsSubmittingReview] = useState(false);
+  const [allowChat,setAllowChat]=useState(false)
   const createChatId = (id1, id2) => {
     return [id1, id2].sort().join('_');
   };
@@ -54,8 +55,10 @@ const ProviderDetailsPage = () => {
         setLoading(true);
         let provider;
 
-        if (location.state && location.state.provider) {
+        if (location.state && location.state.provider && location.state.bool) {
           provider = location.state.provider;
+          console.log(location.state.bool)
+          setAllowChat(location.state.bool)
         } else {
           const providerDoc = await getDoc(doc(db, 'serviceProviders', providerId));
           if (providerDoc.exists()) {
@@ -453,13 +456,13 @@ const handleStartChat = () => {
               </p>
               
               <div className="flex flex-wrap justify-center md:justify-start space-x-4 mt-4">
-                <button 
+               {allowChat && ( <button 
                   onClick={handleOpenBookingModal}
                   className="bg-cyan-600 hover:bg-cyan-700 text-white px-6 py-2 rounded-lg flex items-center"
                 >
                   <FaCalendarAlt className="mr-2" />
                   احجز موعد
-                </button>
+                </button>)}
                 
                 <button 
                   onClick={handleStartChat}
