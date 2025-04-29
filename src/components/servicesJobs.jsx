@@ -162,7 +162,7 @@ const JobsPage = () => {
                 className="border border-gray-300 rounded-lg p-2 w-full focus:ring-2 focus:ring-cyan-500"
               >
                 {governoratesList.map((gov, index) => (
-                  <option key={`gov-${index}`} value={gov}>
+                  <option className={`${index < 3 && index != 0 ? "text-red-600" : ""}`} key={`gov-${index}`} value={gov}>
                     {gov}
                   </option>
                 ))}

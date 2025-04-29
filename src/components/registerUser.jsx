@@ -152,7 +152,7 @@ const RegisterUser = () => {
             >
               <option value="" disabled>اختر المحافظة</option>
               {governorates.map((option, i) => (
-                <option key={i} value={option}>{option}</option>
+                <option className={`${i < 3 && i != 0 ? "text-red-600" : ""}`} key={i} value={option}>{option}</option>
               ))}
             </select>
             {errors.governorate && <p className="text-red-500 text-sm">{errors.governorate}</p>}

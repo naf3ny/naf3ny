@@ -335,7 +335,7 @@ const RegisterProvider = () => {
               onChange={(e) => setFormData(prev => ({ ...prev, governorate: e.target.value }))}
             >
               {governorates.map((gov, i) => (
-                <option key={i} value={gov}>{gov}</option>
+                <option className={`${i < 3 && i != 0 ? "text-red-600" : ""}`} key={i} value={gov}>{gov}</option>
               ))}
             </select>
           </motion.div>
