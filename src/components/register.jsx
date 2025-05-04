@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
-import { db } from "../firebase";
+import { db2 as db } from "../firebase";
 import { collection, setDoc, query, where, getDocs, doc } from "firebase/firestore";
 
 const RegisterProvider = () => {

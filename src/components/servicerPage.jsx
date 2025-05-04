@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useNavigate, useLocation } from 'react-router-dom';
-import { db } from '../firebase';
+import { db,db2 } from '../firebase';
 import { 
   collection, 
   addDoc, 

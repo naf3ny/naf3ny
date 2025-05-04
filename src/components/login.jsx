@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { useNavigate, Link } from "react-router-dom"; // تم استيراد Link
-import { db } from "../firebase";
+import { db , db2 } from "../firebase";
 import { collection, query, where, getDocs } from "firebase/firestore";
 
 const Login = () => {
@@ -23,7 +23,8 @@ const Login = () => {
       }
       // تحديد المجموعة بناءً على الدور
       const collectionName = role === "user" ? "users" : "serviceProviders";
-      const usersRef = collection(db, collectionName);
+      const database = role === "user" ? db : db2;
+      const usersRef = collection(database, collectionName);
 
       // البحث عن المستخدم باستخدام البريد الإلكتروني أو رقم الهاتف
       const q = query(
